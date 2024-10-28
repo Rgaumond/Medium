@@ -1,5 +1,6 @@
 const path = require("path");
 const dotenv = require("dotenv");
+require("dotenv").config();
 const fs = require("fs");
 
 // Read environment variables from "testenv". Override environment vars if they are already set. https://www.npmjs.com/package/dotenv
@@ -11,12 +12,10 @@ if (fs.existsSync(TESTENV)) {
   });
 }
 
-var ISSUER = process.env.ISSUER || "https://rg-esolv.okta.com/oauth2/default";
-var CLIENT_ID = process.env.CLIENT_ID || "0oacrmtg16DDSv1Vg697";
-var CLIENT_SECRET =
-  process.env.CLIENT_SECRET ||
-  "MdIh-7evmNkHrOyrPRRZ7HH-P3valJ5sO-RV1FGUemq5pTkwRCHohetYqgJTRsbB";
-var SPA_CLIENT_ID = process.env.SPA_CLIENT_ID || "0oacrmtg16DDSv1Vg697";
+var ISSUER = process.env.ISSUER;
+var CLIENT_ID = process.env.CLIENT_ID;
+var CLIENT_SECRET = process.env.CLIENT_SECRET;
+var SPA_CLIENT_ID = process.env.SPA_CLIENT_ID;
 var OKTA_TESTING_DISABLEHTTPSCHECK = process.env.OKTA_TESTING_DISABLEHTTPSCHECK
   ? true
   : false;
